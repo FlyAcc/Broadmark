@@ -1,0 +1,6 @@
+add_library(broadmark_dependencies INTERFACE)
+target_include_directories(broadmark_dependencies INTERFACE {CMAKE_CURRENT_SOURCE_DIR})
+
+add_subdirectory(Bullet2)
+add_subdirectory(Bullet3)
+add_subdirectory(Tracy)

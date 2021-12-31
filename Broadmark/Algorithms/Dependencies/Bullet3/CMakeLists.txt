@@ -1,0 +1,6 @@
+project(bullet3)
+
+add_subdirectory(Bullet3Common)
+add_subdirectory(Bullet3Geometry)
+add_subdirectory(Bullet3OpenCL)
+add_subdirectory(Bullet3Collision)
