@@ -65,7 +65,7 @@ set(BROADPHASE_ALGORITHMS_HDRS
 add_library(broadphase_algorithms ${BROADPHASE_ALGORITHMS_HDRS} ${BROADPHASE_ALGORITHMS_SRCS})
 
 target_link_libraries(broadphase_algorithms
-        PRIVATE
+        PUBLIC
         CGAL::CGAL
         CUDA::OpenCL
         broadmark_dependencies

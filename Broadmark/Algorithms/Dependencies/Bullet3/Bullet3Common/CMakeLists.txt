@@ -4,7 +4,7 @@ set(Bullet3Common_SRCS
         b3Logging.cpp
         )
 
-SET(Bullet3Common_HDRS
+set(Bullet3Common_HDRS
         b3AlignedAllocator.h
         b3AlignedObjectArray.h
         b3CommandLineArgs.h
@@ -29,4 +29,4 @@ SET(Bullet3Common_HDRS
         shared/b3Quat.h
         )
 
-ADD_LIBRARY(Bullet3Common ${Bullet3Common_SRCS} ${Bullet3Common_HDRS})
+add_library(Bullet3Common ${Bullet3Common_SRCS} ${Bullet3Common_HDRS})

@@ -4,9 +4,6 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/Algorithms/Dependencies/Bullet3
 )
 
-find_package(CUDAToolkit)
-find_package(CGAL CONFIG REQUIRED)
-
 set(ALGORITHM_CORE_SRCS
         Math/Random.cpp
         Math/Vec3.cpp
@@ -38,9 +35,6 @@ add_library(algorithm_core ${ALGORITHM_CORE_SRCS} ${ALGORITHM_CORE_HDRS})
 
 target_link_libraries(algorithm_core
         PRIVATE
-        CGAL::CGAL
-        CUDA::OpenCL
-        broadmark_dependencies
         broadphase_algorithms
         Bullet3OpenCL_clew
         )
