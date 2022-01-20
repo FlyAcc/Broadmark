@@ -14,7 +14,7 @@
 #include "Broadphase/Algorithms/Misc/None.h"
 #include "Broadphase/Algorithms/Misc/Inspectors.h"
 #include "Broadphase/Algorithms/KD/KD.h"
-
+#include "Broadphase/Algorithms/FCL/FCLAabbAlgorithm.h"
 
 #define REGISTER(name, type) if (strcmp(name, algorithmName) == 0) { return std::make_unique<type>(); }
 std::unique_ptr<BroadphaseInterface> Algorithms::Create(const char* algorithmName) {
@@ -38,22 +38,23 @@ std::unique_ptr<BroadphaseInterface> Algorithms::Create(const char* algorithmNam
 	REGISTER("Grid_3D_SAP", Grid_3D_SAP);
 	REGISTER("Grid_2D_Parallel", Grid_2D_Parallel);
 	REGISTER("Grid_3D_Parallel", Grid_3D_Parallel);
-	REGISTER("Grid_2D_SAP_Parallel", Grid_2D_SAP_Parallel);
-	REGISTER("Grid_3D_SAP_Parallel", Grid_3D_SAP_Parallel);
-	REGISTER("Tracy", Tracy);
-	REGISTER("Tracy_Parallel", Tracy_Parallel);
-	REGISTER("DBVT D", DBVT_D);
-	REGISTER("DBVT F", DBVT_F);
-	REGISTER("GPU_Grid", GPU_Grid);
-	REGISTER("GPU_LBVH", GPU_LBVH);
-	REGISTER("GPU_SAP", GPU_SAP);
-	REGISTER("KD", KD);
+        REGISTER("Grid_2D_SAP_Parallel", Grid_2D_SAP_Parallel);
+        REGISTER("Grid_3D_SAP_Parallel", Grid_3D_SAP_Parallel);
+        REGISTER("Tracy", Tracy);
+        REGISTER("Tracy_Parallel", Tracy_Parallel);
+        REGISTER("DBVT D", DBVT_D);
+        REGISTER("DBVT F", DBVT_F);
+        REGISTER("GPU_Grid", GPU_Grid);
+        REGISTER("GPU_LBVH", GPU_LBVH);
+        REGISTER("GPU_SAP", GPU_SAP);
+        REGISTER("KD", KD);
+        REGISTER("FCL_AABB", FCLAabbAlgorithm);
 
-	// Misc algorithms used to validate the system
-	REGISTER("None", None);
-	REGISTER("TimeValidator", TimeValidator);
+        // Misc algorithms used to validate the system
+        REGISTER("None", None);
+        REGISTER("TimeValidator", TimeValidator);
 
-	return nullptr;
+        return nullptr;
 }
 
 std::vector<const char*> Algorithms::EnumerateAlgorithms() {

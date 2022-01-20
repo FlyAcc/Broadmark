@@ -1,13 +1,10 @@
 #pragma once
 
-
-
-#include "Broadphase\OverlapCache.h"
-#include "Broadphase\ObjectPair.h"
+#include "../ObjectPair.h"
+#include "../OverlapCache.h"
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
-
 
 // Pair cache implementation based on hashing.
 // Pairs are stored in random order, as defined by the std::unordered_set
